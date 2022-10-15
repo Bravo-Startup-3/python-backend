@@ -3,12 +3,12 @@ Website Python Backend of Stratifi, a startup for brand and influencers.
 
 Your can follow our update on our social media handles below:
 
-Twitter: # @stratifi_
+Twitter: @stratifi_
 
-Facebook: # @stratifi
+Facebook: @stratifi
 
-Lingkedin: # @stratifing
+Lingkedin: @stratifing
 
-Instagram: # @stratifii_
+Instagram: @stratifii_
 
-TikTok: # @stratifi
+TikTok: @stratifi
