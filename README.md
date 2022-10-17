@@ -17,4 +17,4 @@ TikTok: @stratifi
 
 ## Technology
 
-The website will be created using Django Python for the Backend and ReactJs for the Front end.
+The website will be created using Django Python Framework for the Backend and ReactJs JavaScript Framework for the Frontend.
