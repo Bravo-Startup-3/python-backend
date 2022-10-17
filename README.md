@@ -15,4 +15,6 @@ Instagram: @stratifii_
 
 TikTok: @stratifi
 
+## Technology
+
 The website will be created using Django Python for th Backend and ReactJs for the Front end.
