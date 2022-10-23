@@ -19,7 +19,7 @@ TikTok: @stratifi
 
 The website will be created using Django Python Framework for the Backend and ReactJs JavaScript Framework for the Frontend.
 
-To Do List
+##To Do List
 
 1. Create virtual environment venv 
 2. Create django project on core and install all the requirement
