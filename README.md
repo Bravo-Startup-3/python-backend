@@ -31,3 +31,9 @@ The website will be created using Django Python Framework for the Backend and Re
 8. Integrate payments to the app.
 
 Things will be added as we progress.
+
+## Python Frameworks
+1. Django
+2. Restframework
+3. Pillow
+
