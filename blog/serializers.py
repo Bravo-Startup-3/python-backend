@@ -1,5 +1,5 @@
 from rest_framework.serializers import HyperlinkedIdentityField, ModelSerializer, SerializerMethodField, ValidationError
-from users.serializers import UserDetailSerializer
+from users.serializers import UserSerializer
 from .models import Comment, Post
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth import get_user_model
@@ -25,7 +25,7 @@ post_detail_url = HyperlinkedIdentityField(
 
 class PostDetailSerializer(ModelSerializer):
     url = post_detail_url
-    user = UserDetailSerializer(read_only=True)
+    user = UserSerializer(read_only=True)
     image = SerializerMethodField()
     html = SerializerMethodField()
     comments = SerializerMethodField()
@@ -61,7 +61,7 @@ class PostDetailSerializer(ModelSerializer):
 
 class PostListSerializer(ModelSerializer):
     url = post_detail_url
-    user = UserDetailSerializer(read_only=True)
+    user = UserSerializer(read_only=True)
     class Meta:
         model = Post
         fields = [
@@ -170,7 +170,7 @@ class CommentListSerializer(ModelSerializer):
 
 
 class CommentChildSerializer(ModelSerializer):
-    user = UserDetailSerializer(read_only=True)
+    user = UserSerializer(read_only=True)
     class Meta:
         model = Comment
         fields = [
@@ -183,7 +183,7 @@ class CommentChildSerializer(ModelSerializer):
 
 
 class CommentDetailSerializer(ModelSerializer):
-    user = UserDetailSerializer(read_only=True)
+    user = UserSerializer(read_only=True)
     reply_count = SerializerMethodField()
     content_object_url = SerializerMethodField()
     replies =   SerializerMethodField()

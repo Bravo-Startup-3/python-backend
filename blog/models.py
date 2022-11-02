@@ -49,7 +49,7 @@ class Post(models.Model):
             height_field="height_field")
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
-    content = RichTextUploadingField(config_name='blog_ckeditor', null=True, blank=True)
+    content = RichTextUploadingField(config_name='default', null=True, blank=True)
     draft = models.BooleanField(default=False)
     publish = models.DateField(auto_now=False, auto_now_add=False)
     read_time =  models.IntegerField(default=0) # models.TimeField(null=True, blank=True) #assume minutes

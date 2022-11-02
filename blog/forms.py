@@ -5,7 +5,7 @@ from .models import Post
 
 #Post
 class PostForm(forms.ModelForm):
-    content = RichTextUploadingField(widget=PagedownWidget(show_preview=False))
+    content = RichTextUploadingField()
     publish = forms.DateField(widget=forms.SelectDateWidget)
     class Meta:
         model = Post

@@ -1,6 +1,6 @@
 
 from rest_framework import serializers
-from django_countries.serializers import CountryField
+from django_countries.serializer_fields import CountryField
 from .models import User, Influencer, Brand, Admin
 
 

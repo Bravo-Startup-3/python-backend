@@ -1,22 +1,20 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, re_path
 from django.contrib.auth import views as auth_views
 from users import views
 from django.conf.urls.static import static
 from django.conf import settings
-from rest_framework_jwt.views import obtain_jwt_token
+#from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path(r'^comments/', include("blog.urls", namespace='comments')),
-    path(r'^api/users/', include("users.urls", namespace='users-api')),
-    path(r'^api/comments/', include("blog.urls", namespace='comments-api')),
-    path(r'^api/posts/', include("blog.urls", namespace='posts-api')),
-    path(r'^api/auth/token/', obtain_jwt_token),
-    path('login/', views.login, name='login'),
-    path('users/', include('allauth.urls')),
-    path('api/', include("users.urls")),
-    path('/', include("users.urls")),
+    re_path('admin/', admin.site.urls),
+    re_path(r'^', include("blog.urls")),
+    #re_path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    #re_path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    re_path('api/users/', include('allauth.urls')),
+    re_path('api/', include("users.urls")),
+    re_path('/', include("users.urls")),
+    #url(r'^posts/$', "<appname>.views.<function_name>"),
 ]
 
 

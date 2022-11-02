@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'markdown_deux',
     'pagedown',
+    
 
     #Social Auth
     'allauth',
@@ -84,6 +85,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        #'rest_framework_simplejwt.authentication.JWTAuthentication', 
+    ),
+}
 
 ROOT_URLCONF = 'core.urls'
 
@@ -156,6 +168,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = "users.User"
+ACCOUNT_UNIQUE_EMAIL=True
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
