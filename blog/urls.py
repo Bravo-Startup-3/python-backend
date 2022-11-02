@@ -23,3 +23,7 @@ urlpatterns = [
     re_path(r'^(?P<pk>\d+)/$', CommentDetailAPIView.as_view()),
     #re_path(r'^(?P<id>\d+)/delete/$', comment_delete, name='delete'),
 ]
+	#re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    #re_path('api/blog/', include('blog.urls')),
+
+	

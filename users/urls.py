@@ -6,7 +6,7 @@ from .views import ( InfluencerSignupView,
 urlpatterns=[
     path('signup/influencer/', InfluencerSignupView.as_view()),
     path('signup/brand/', BrandSignupView.as_view()),
-    path('signup/admin/', AdminSignupView.as_view()),
+    path('signup/admins/', AdminSignupView.as_view()),
     path('login/',CustomAuthToken.as_view(), name='auth-token'),
     path('logout/', LogoutView.as_view(), name='logout-view'),
     path('influencer/dashboard/', InfluencerOnlyView.as_view(), name='influencer-dashboard'),

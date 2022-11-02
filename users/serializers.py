@@ -90,4 +90,4 @@ class AdminSignupSerializer(serializers.ModelSerializer):
 
         'full_name', 'phone', 'country', 'address', 'portfolio',
         'about', 'website', 'linkedin_url', 'facebook_url', 'instagram_url', 
-        'twitter_url', 'tik_tok_url'   
+        'twitter_url', 'tik_tok_url'  
