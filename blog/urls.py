@@ -1,4 +1,3 @@
-from django.contrib import admin
 #from .views import post_list, post_create, post_detail, post_update, post_delete
 from django.urls import include, re_path
 from django.contrib import admin

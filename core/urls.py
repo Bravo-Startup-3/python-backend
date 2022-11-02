@@ -15,6 +15,7 @@ urlpatterns = [
     re_path('api/users/', include('allauth.urls')),
     re_path('api/', include("users.urls")),
     re_path('/', include("users.urls")),
+    re_path('/', include("about.urls")),
     #url(r'^posts/$', "<appname>.views.<function_name>"),
     re_path('^ckeditor/', include('ckeditor_uploader.urls')),
     #re_path('api-auth/', include('rest_framework.urls')),
