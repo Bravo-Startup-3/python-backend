@@ -85,9 +85,3 @@ class AdminSignupSerializer(serializers.ModelSerializer):
         Admin.objects.create(user=user)
         return user
 
-
-
-
-        'full_name', 'phone', 'country', 'address', 'portfolio',
-        'about', 'website', 'linkedin_url', 'facebook_url', 'instagram_url', 
-        'twitter_url', 'tik_tok_url'  

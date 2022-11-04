@@ -1,9 +1,19 @@
 from django.contrib import admin
-from .models import HomePage, Services, Pricing, AboutUs, Terms, Privacy
 
-admin.site.register(HomePage)
-admin.site.register(Services)
-admin.site.register(Pricing)
-admin.site.register(AboutUs)
-admin.site.register(Terms)
-admin.site.register(Privacy)
+from about.views import PageCreateAPIView
+
+# Register your models here.
+from .models import Page
+
+class PageModelAdmin(admin.ModelAdmin):
+	list_display = ["title", "updated", "timestamp"]
+	list_display_links = ["updated"]
+	list_editable = ["title"]
+	list_filter = ["updated", "timestamp"]
+
+	search_fields = ["title", "content"]
+	class Meta:
+		model = PageCreateAPIView
+
+
+admin.site.register(Page, PageModelAdmin)

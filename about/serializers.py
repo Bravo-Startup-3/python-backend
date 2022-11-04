@@ -1,52 +1,67 @@
-from django.db import models
-from rest_framework.serializers import HyperlinkedIdentityField, ModelSerializer
-from .models import HomePage, Pricing, AboutUs, Services, Terms, Privacy
+from rest_framework.serializers import HyperlinkedIdentityField, ModelSerializer, SerializerMethodField, ValidationError
+from users.serializers import UserSerializer
+from .models import Page
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.auth import get_user_model
 
-class HomePageSerializer(ModelSerializer):
+#Page Serializers
+class PageCreateUpdateSerializer(ModelSerializer):
     class Meta:
-        model = HomePage
+        model = Page
         fields = [
+            'id',
             'title',
-            'body'
+            'slug',
+            'content',
+            'publish'
         ]
 
-class PricingSerializer(ModelSerializer):
+
+page_detail_url = HyperlinkedIdentityField(
+        view_name='pages-api:detail',
+        lookup_field='slug'
+        )
+
+
+class PageDetailSerializer(ModelSerializer):
+    url = page_detail_url
+    user = UserSerializer(read_only=True)
+    image = SerializerMethodField()
+    html = SerializerMethodField()
     class Meta:
-        model = Pricing
+        model = Page
         fields = [
+            'url',
+            'id',
+            'user',
             'title',
-            'body'
+            'slug',
+            'content',
+            'html',
+            'publish',
+            'image',
         ]
 
-class AboutUsSerializer(ModelSerializer):
-    class Meta:
-        model = AboutUs
-        fields = [
-            'title',
-            'body'
-        ]
+    def get_html(self, obj):
+        return obj.get_markdown()
 
-class ServicesSerializer(ModelSerializer):
-    class Meta:
-        model = Services
-        fields = [
-            'title',
-            'body'
-        ]
+    def get_image(self, obj):
+        try:
+            image = obj.image.url
+        except:
+            image = None
+        return image
 
-class TermsSerializer(ModelSerializer):
-    class Meta:
-        model = Terms
-        fields = [
-            'title',
-            'body'
-        ]
 
-class PrivacySerializer(ModelSerializer):
+class PageListSerializer(ModelSerializer):
+    url = page_detail_url
+    user = UserSerializer(read_only=True)
     class Meta:
-        model = Privacy
+        model = Page
         fields = [
+            'url',
+            'user',
             'title',
-            'body'
+            'content',
+            'publish',
         ]
-

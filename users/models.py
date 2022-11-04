@@ -34,10 +34,15 @@ class Influencer(models.Model):
     about = models.TextField(null=True, blank=True)
     website = models.URLField(null=True, blank=True)
     linkedin_url = models.URLField(null=True, blank=True)
+    linkedin_followers = models.IntegerField(null=True, blank=True)
     facebook_url = models.URLField(null=True, blank=True)
+    facebook_followers = models.IntegerField(null=True, blank=True)
     instagram_url = models.URLField(null=True, blank=True)
+    instagram_followers = models.IntegerField(null=True, blank=True)
     twitter_url = models.URLField(null=True, blank=True)
+    twitter_followers = models.IntegerField(null=True, blank=True)
     tik_tok_url = models.URLField(null=True, blank=True)
+    tit_tok_followers = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.user.username
@@ -55,10 +60,15 @@ class Brand(models.Model):
     about = models.TextField(null=True, blank=True)
     website = models.URLField(null=True, blank=True)
     linkedin_url = models.URLField(null=True, blank=True)
+    linkedin_followers = models.IntegerField(null=True, blank=True)
     facebook_url = models.URLField(null=True, blank=True)
+    facebook_followers = models.IntegerField(null=True, blank=True)
     instagram_url = models.URLField(null=True, blank=True)
+    instagram_followers = models.IntegerField(null=True, blank=True)
     twitter_url = models.URLField(null=True, blank=True)
+    twitter_followers = models.IntegerField(null=True, blank=True)
     tik_tok_url = models.URLField(null=True, blank=True)
+    tit_tok_followers = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.company_name
