@@ -4,12 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+SMTP_USERNAME = os.getenv['SMTP_USERNAME']
+SMTP_PASSWORD = os.getenv['SMTP_PASSWORD']
+SMTP_PORT = os.getenv['SMTP_PORT']
+SMTP_API = os.getenv['SMTP_API']
+SMTP_HOST = os.getenv['SMTP_HOST']
+SMTP_EMAIL = os.getenv['SMTP_EMAIL']
 
 
-PORT = os.getenv['PORT']
-HOST = os.getenv['HOST']
-USER = os.getenv['USERNAME']
-PASS = os.getenv['PASSWORD']
 
 class Mailer:
     def __init__(self, message, recipient):
@@ -19,7 +21,7 @@ class Mailer:
 
 
     def __call__():
-        server = smtplib.SMTP(HOST,PORT)
+        server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
         server.login(sender_email, password)
 
 

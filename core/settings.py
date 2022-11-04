@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     'about',
     'blog',
     'support',
-    # 'project',
+    #'marketing',
 
 ]
 
@@ -286,3 +286,4 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+

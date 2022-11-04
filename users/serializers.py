@@ -7,7 +7,7 @@ from .models import User, Influencer, Brand, Admin
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=User
-        fields=['username', 'email', 'password', 'is_brand']
+        fields=['username', 'email', 'password', 'is_active']
 
 class InfluencerSignupSerializer(serializers.ModelSerializer):
     password2=serializers.CharField(style={"input_type":"password"}, write_only=True)

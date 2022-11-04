@@ -48,12 +48,17 @@ class CustomAuthToken(ObtainAuthToken):
     def post(self, request, *args, **kwargs):
         serializer=self.serializer_class(data=request.data, context={'request':request})
         serializer.is_valid(raise_exception=True)
+
+            #user = form.save(commit=False)
+            #user.is_active = False # Deactivate account till it is confirmed
+            #user.save()
+
         user=serializer.validated_data['user']
         token, created=Token.objects.get_or_create(user=user)
         return Response({
             'token':token.key,
             'user_id':user.pk,
-            'is_brand':user.is_brand
+            'is_active': False
         })
 
 
