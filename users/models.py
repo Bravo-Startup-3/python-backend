@@ -11,6 +11,7 @@ from rest_framework.authtoken.models import Token
 class User(AbstractUser):
     is_influencer=models.BooleanField(default=False)
     is_brand=models.BooleanField(default=False)
+    is_employee=models.BooleanField(default=False)
     is_admin=models.BooleanField(default=False)
 
     def __str__(self) :
@@ -52,7 +53,7 @@ class Brand(models.Model):
     user=models.OneToOneField(User, related_name="brand", on_delete=models.CASCADE)
     email = models.EmailField(max_length=50)
     #username = models.CharField(max_length=50)
-    come_name = models.CharField(max_length=200, null=True, blank=True)
+    company_name = models.CharField(max_length=200, null=True, blank=True)
     company_size = models.CharField(max_length=200, null=True, blank=True)
     phone = models.CharField(max_length=200, null=True, blank=True)
     country = CountryField(null=True, blank=True)
@@ -73,7 +74,7 @@ class Brand(models.Model):
     def __str__(self):
         return self.user.username
 
-class Admin(models.Model):
+class Employee(models.Model):
     user=models.OneToOneField(User, related_name="admin", on_delete=models.CASCADE)
     email = models.EmailField(max_length=50)
     #username = models.CharField(max_length=50)

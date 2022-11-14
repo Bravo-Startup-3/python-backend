@@ -1,7 +1,7 @@
 
 from rest_framework import serializers
 from django_countries.serializer_fields import CountryField
-from .models import User, Influencer, Brand, Admin
+from .models import User, Influencer, Brand, Employee
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -60,7 +60,7 @@ class BrandSignupSerializer(serializers.ModelSerializer):
         return user
 
 
-class AdminSignupSerializer(serializers.ModelSerializer):
+class EmployeeSignupSerializer(serializers.ModelSerializer):
     password2=serializers.CharField(style={"input_type":"password"}, write_only=True)
     class Meta:
         model=User
@@ -82,6 +82,6 @@ class AdminSignupSerializer(serializers.ModelSerializer):
         user.set_password(password)
         user.is_admin=True
         user.save()
-        Admin.objects.create(user=user)
+        Employee.objects.create(user=user)
         return user
 
