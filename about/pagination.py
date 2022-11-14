@@ -1,4 +1,4 @@
-from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
+'''from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 
 
 
@@ -8,4 +8,4 @@ class PageLimitOffsetPagination(LimitOffsetPagination):
 
 
 class PageNumberPagination(PageNumberPagination):
-    page_size = 20
+    page_size = 20'''

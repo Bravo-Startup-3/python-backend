@@ -1,4 +1,4 @@
-from rest_framework.permissions import BasePermission, SAFE_METHODS
+'''from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 
 class IsOwnerOrReadOnly(BasePermission):
@@ -14,4 +14,4 @@ class IsOwnerOrReadOnly(BasePermission):
         #member.is_active
         if request.method in SAFE_METHODS:
             return True
-        return obj.user == request.user
+        return obj.user == request.user'''

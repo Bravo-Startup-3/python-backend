@@ -1,4 +1,4 @@
-from rest_framework.serializers import HyperlinkedIdentityField, ModelSerializer, SerializerMethodField, ValidationError
+'''from rest_framework.serializers import HyperlinkedIdentityField, ModelSerializer, SerializerMethodField, ValidationError
 from users.serializers import UserSerializer
 from .models import Page
 from django.contrib.contenttypes.models import ContentType
@@ -65,3 +65,4 @@ class PageListSerializer(ModelSerializer):
             'content',
             'publish',
         ]
+'''

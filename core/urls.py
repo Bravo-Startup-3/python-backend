@@ -10,7 +10,7 @@ from django.conf import settings
 urlpatterns = [
     re_path('admin/', admin.site.urls),
     re_path(r'^blog/', include("blog.urls")),
-    re_path(r'^about/', include("about.urls")),
+    #re_path(r'^about/', include("about.urls")),
     #re_path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     #re_path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     re_path('api/users/', include('allauth.urls')),

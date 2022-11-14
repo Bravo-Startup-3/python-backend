@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+'''from __future__ import unicode_literals
 from django.db import models 
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -99,3 +99,4 @@ def pre_save_page_receiver(sender, instance, *args, **kwargs):
 #        instance.read_time = read_time_var
 
 pre_save.connect(pre_save_page_receiver, sender=Page)
+'''

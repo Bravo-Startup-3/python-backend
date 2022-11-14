@@ -1,4 +1,4 @@
-from django.contrib import admin
+'''from django.contrib import admin
 
 from about.views import PageCreateAPIView
 
@@ -16,4 +16,4 @@ class PageModelAdmin(admin.ModelAdmin):
 		model = PageCreateAPIView
 
 
-admin.site.register(Page, PageModelAdmin)
+admin.site.register(Page, PageModelAdmin)'''

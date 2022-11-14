@@ -1,4 +1,4 @@
-from django.urls import include, re_path
+'''from django.urls import include, re_path
 from django.contrib import admin
 
 from .views import PageCreateAPIView, PageDeleteAPIView, PageDetailAPIView, PageListAPIView, PageUpdateAPIView
@@ -22,4 +22,4 @@ urlpatterns = [
 ]
 
 
-	
+	'''

@@ -1,4 +1,4 @@
-import datetime
+'''import datetime
 import math
 import re
 
@@ -14,7 +14,7 @@ def count_words(html_string):
     matching_words = re.findall(r'\w+', word_string)
     count = len(matching_words) #joincfe.com/projects/
     return count
-
+'''
 '''
 def get_read_time(html_string):
     count = count_words(html_string)
